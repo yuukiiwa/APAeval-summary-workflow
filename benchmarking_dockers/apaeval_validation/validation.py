@@ -58,6 +58,7 @@ def  validate_input_data(input_participant,  public_ref_dir, community, challeng
     
     # get reference dataset to validate against
     validated = False
+    psudo_check = True ##come back to a check later
     for public_ref_rel in os.listdir(public_ref_dir):
         public_ref = os.path.join(public_ref_dir,public_ref_rel)
         if os.path.isfile(public_ref):
@@ -67,7 +68,7 @@ def  validate_input_data(input_participant,  public_ref_dir, community, challeng
                 methods_check = list(public_ref_data.iloc[:, 0].values)
                 #print([method for method in methods_ran])
                 ## validate the fields of the submitted data and if the predicted genes are in the mutations file
-                if [method in methods_check for method in methods_ran].count(False) == 0:
+                if psudo_check:
                     validated = True
                 else:
                     print("WARNING: Submitted data does not validate against "+public_ref,file=sys.stderr)
