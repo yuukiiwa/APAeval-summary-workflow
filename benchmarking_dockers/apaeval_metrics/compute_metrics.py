@@ -54,7 +54,7 @@ def compute_metrics(input_participant, gold_standards_dir, challenge_types, part
         # get metrics dataset
 #        metrics_data = pandas.read_csv(os.path.join(gold_standards_dir, challenge + ".txt"),
 #                                       comment="#", header=0, sep='\t',index_col=0)
-        metrics_data=os.path.join(gold_standards_dir, "siControl_R2.MACEseq.mm10.bed") ##PLEASE CHANGE THIS LATER
+        metrics_data=os.path.join(gold_standards_dir, challenge + ".bed") ##NO LONGER HARD-CODED
 
         # metric on the number of matched sites
         window = 15
