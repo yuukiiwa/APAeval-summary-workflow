@@ -86,7 +86,7 @@ def  validate_input_data(input_participant,  public_ref_dir, community, challeng
                 import traceback
                 traceback.print_exc()
 
-    data_id = community + ":" + participant_name + "_P"
+    data_id = "APAeval" + ":" + participant_name
     output_json = JSON_templates.write_participant_dataset(data_id, community, challenges, participant_name, validated)
 
     # print file
