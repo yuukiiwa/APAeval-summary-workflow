@@ -135,7 +135,7 @@ def generate_manifest(data_dir,output_dir, participant_data):
             participants.append(name["participant_id"])
 
         #copy the updated aggregation file to output directory
-        summary_dir = os.path.join(challenge_dir,challenge + "_summary.json")
+        summary_dir = os.path.join(challenge_dir,challenge + ".json")
         with open(summary_dir, 'w') as f:
             json.dump(aggregation_file, f, sort_keys=True, indent=4, separators=(',', ': '))
 
