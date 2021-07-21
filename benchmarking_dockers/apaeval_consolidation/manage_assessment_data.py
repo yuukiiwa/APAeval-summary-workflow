@@ -9,7 +9,7 @@ from argparse import ArgumentParser
 import numpy as np
 from assessment_chart import assessment_chart
 
-DEFAULT_eventMark = '2018-04-05'
+DEFAULT_eventMark = '2021-06-04'
 
 def main(args):
 
@@ -80,7 +80,7 @@ def generate_manifest(data_dir,output_dir, participant_data):
                 metric_Y = "precision"
             
             aggregation_file = {
-                "_id": "TCGA:{}_{}_Aggregation".format(DEFAULT_eventMark, challenge),
+                "_id": "APAeval:{}_{}_Aggregation".format(DEFAULT_eventMark, challenge),
                 "challenge_ids": [
                     challenge
                 ],
