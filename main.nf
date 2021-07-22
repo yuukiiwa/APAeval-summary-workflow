@@ -136,6 +136,7 @@ process benchmark_consolidation {
 	path benchmark_data
 	file assessment_out
 	file validation_out
+	val cancer_types
 	
 	output:
 	path 'aggregation_dir', type: 'dir'
@@ -143,7 +144,7 @@ process benchmark_consolidation {
 
 	"""
 	python /app/manage_assessment_data.py -b $benchmark_data -p $assessment_out -o aggregation_dir
-	python /app/merge_data_model_files.py -p $validation_out -m $assessment_out -a aggregation_dir -o data_model_export.json
+	python /app/merge_data_model_files.py -p $validation_out -m $assessment_out -c $cancer_types -a aggregation_dir -o data_model_export.json
 	"""
 
 }
